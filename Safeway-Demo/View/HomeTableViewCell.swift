@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol CellDelegate {
+protocol CellDelegate: class {
     func didClickOnCellAtIndex(at index:IndexPath)
 }
 
@@ -20,7 +20,7 @@ class HomeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var shadowView: ShadowView!
     
-    var delegate:CellDelegate!
+    weak var delegate:CellDelegate?
     var indexPath:IndexPath!
     
     @IBAction func buttonClick(_ sender: UIButton) {
